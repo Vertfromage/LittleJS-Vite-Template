@@ -16,9 +16,11 @@ class GameManager {
         this.paddle;
 
         // properties
-        this.canvasFixedSize = vec2(500, 500); // 720p
+        // this.canvasFixedSize = vec2(500, 500); // 720p
         this.levelSize = vec2(38, 20);
-        this.cameraPos = this.levelSize.scale(.5);
+
+        //set the cameraPos
+        this.InitialCameraPos = this.levelSize.scale(.5);
 
         // sound effects
         this.sound_start  = new Sound([,0,500,,.04,.3,1,2,,,570,.02,.02,,,,.04]);

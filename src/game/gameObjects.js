@@ -16,7 +16,7 @@ import {
     randSign,
     max,
     min,
-    PI
+    PI,
  } from 'littlejsengine/build/littlejs.esm.js';
 'use strict';
 // import the game manager for global variables, properties, functions

@@ -19,4 +19,4 @@ npm run dev
 - import the littleJS module and destructure all functions/properties that you need
 
 # Current Bugs
-- I have the example pong project running, but it's zoomed in too much and not centered in the canvas. 
+- I have the example pong project running, but it's zoomed in too much

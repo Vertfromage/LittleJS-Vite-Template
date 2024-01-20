@@ -12,7 +12,8 @@ import {
     mouseWasPressed, 
     gamepadWasPressed,
     drawRect,
-    Color
+    Color,
+    cameraPos,
 
  } from 'littlejsengine/build/littlejs.esm.js'; // Better practice to destructure the functions you need...
 
@@ -38,6 +39,10 @@ function gameInit()
     GM.setScore(0)
     GM.setBrickCount(0)
     GM.setPaddle(new Paddle(vec2(GM.levelSize.x/2-12,1)))
+
+    // camera
+    cameraPos.x = GM.InitialCameraPos.x;
+    cameraPos.y = GM.InitialCameraPos.y;
 
     // spawn bricks
     const pos = vec2();
@@ -74,8 +79,8 @@ function gameUpdatePost()
 function gameRender()
 {
     // draw a the background
-    drawRect(GM.cameraPos, GM.levelSize.scale(2), new Color(.5,.5,.5));
-    drawRect(GM.cameraPos, GM.levelSize, new Color(.05,.05,.05));
+    drawRect(cameraPos, GM.levelSize.scale(2), new Color(.5,.5,.5));
+    drawRect(cameraPos, GM.levelSize, new Color(.05,.05,.05));
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -83,11 +88,11 @@ function gameRenderPost()
 {
     // use built in image font for text
     const font = new FontImage;
-    font.drawText('Score: ' + GM.score, GM.cameraPos.add(vec2(0,9.6)), .1, 1);
+    font.drawText('Score: ' + GM.score, cameraPos.add(vec2(0,9.6)), .1, 1);
     if (!GM.brickCount)
-        font.drawText('You Win!', GM.cameraPos.add(vec2(0,-5)), .2, 1);
+        font.drawText('You Win!', cameraPos.add(vec2(0,-5)), .2, 1);
     else if (!GM.ball)
-        font.drawText('Click to Play', GM.cameraPos.add(vec2(0,-5)), .2, 1);
+        font.drawText('Click to Play', cameraPos.add(vec2(0,-5)), .2, 1);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
