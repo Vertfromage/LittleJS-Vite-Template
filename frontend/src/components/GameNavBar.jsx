@@ -44,7 +44,7 @@ const NavBar = ({ info, setInfo, settings, setSettings }) => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-lg font-bold">
-          Koii FishTank
+          LittleJS Game Integration
         </div>
 
         {/* Mobile Menu Button */}
