@@ -4,7 +4,7 @@
 */
 
 // Import all used functions from LittleJS module
-import { vec2, Sound} from 'littlejsengine/build/littlejs.esm.js'; // Adjust the import path as needed
+import { vec2, Sound, setCanvasFixedSize, setCameraPos} from 'littlejsengine/build/littlejs.esm.js'; // Adjust the import path as needed
 
 
 class GameManager {
@@ -16,11 +16,14 @@ class GameManager {
         this.paddle;
 
         // properties
-        // this.canvasFixedSize = vec2(500, 500); // 720p
+        setCanvasFixedSize( vec2(1280, 720));
         this.levelSize = vec2(38, 20);
 
         //set the cameraPos
         this.InitialCameraPos = this.levelSize.scale(.5);
+
+        // camera
+        setCameraPos(this.levelSize.scale(.5))
 
         // sound effects
         this.sound_start  = new Sound([,0,500,,.04,.3,1,2,,,570,.02,.02,,,,.04]);

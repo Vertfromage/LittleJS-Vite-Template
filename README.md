@@ -20,3 +20,15 @@ npm run dev
 
 # Current Bugs
 - I have the example pong project running, but it's zoomed in too much
+
+# import styles
+```
+// Import the entire module under a namespace
+import * as LittleJS from 'littlejsengine/build/littlejs.esm.js';
+
+// Destructure frequently used functions for direct access
+const { vec2, Sound } = LittleJS;
+
+// Alternatively just start with destructured
+import { vec2, Sound} from 'littlejsengine/build/littlejs.esm.js';
+```

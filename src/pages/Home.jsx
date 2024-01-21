@@ -10,7 +10,7 @@ import LittleGame from '../game/LittleGame';
 const Home = () => {
   const [info, setInfo] = useState(false)
   const [settings, setSettings] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(true)
 
   return (
     loggedIn ? (<>

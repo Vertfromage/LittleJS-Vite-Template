@@ -14,7 +14,6 @@ import {
     drawRect,
     Color,
     cameraPos,
-
  } from 'littlejsengine/build/littlejs.esm.js'; // Better practice to destructure the functions you need...
 
 
@@ -39,10 +38,6 @@ function gameInit()
     GM.setScore(0)
     GM.setBrickCount(0)
     GM.setPaddle(new Paddle(vec2(GM.levelSize.x/2-12,1)))
-
-    // camera
-    cameraPos.x = GM.InitialCameraPos.x;
-    cameraPos.y = GM.InitialCameraPos.y;
 
     // spawn bricks
     const pos = vec2();
