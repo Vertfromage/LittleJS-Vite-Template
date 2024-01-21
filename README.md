@@ -19,7 +19,7 @@ npm run dev
 - import the littleJS module and destructure all functions/properties that you need
 
 # Current Bugs
-- I have the example pong project running, but it's zoomed in too much
+- I have the example breakout project running, but it's zoomed in too much
 
 # import styles
 ```
