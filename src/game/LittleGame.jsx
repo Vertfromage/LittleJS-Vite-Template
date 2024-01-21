@@ -145,13 +145,6 @@ function initPostProcess()
 // Startup LittleJS Engine
 engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, tileSheet);
 
-// Adjust canvas styles
-const canvas = document.querySelector('canvas');
-if (canvas) {
-  canvas.style.position = 'relative'; // Change positioning
-  canvas.style.top = '60px'; // Adjust top position based on NavBar height
-}
-
         // Cleanup function - This is why it's getting bugs when opening/shutting buttons
         return () => {
             // Add logic here to properly shut down/reset your game
@@ -159,7 +152,7 @@ if (canvas) {
             // Example: gameShutdown(); // Replace with actual shutdown/reset function
         };
 }, []);
-    return <div ref={containerRef} className="mt-60"></div>;
+    return <div ref={containerRef}></div>;
   
 }
 
