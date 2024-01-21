@@ -16,41 +16,33 @@ const Home = () => {
   const [loggedIn, setLoggedIn] = useState(true)
 
   return (
-    loggedIn ? (<>
-    <NavBar 
-        info={info} 
-        setInfo={setInfo} 
-        settings={settings} 
-        setSettings={setSettings} 
-      />
-    {
-  info ? (
-    // This content is shown if the 'info' state is true
-    <div>
-      {/* Content or component for the Info screen */}
-      <Info />
-    </div>
-  ) : settings ? (
-    // This content is shown if the 'settings' state is true
-    <div>
-      {/* Content or component for the Settings screen */}
-      <Settings setLoggedIn={setLoggedIn}/>
-    </div>
-  ) : ( <></> )
-}
-  <div>
-      {/* Content or component for the default screen */}
-      {/* <CanvasGame/> */}
-      <LittleGame/>
-  </div>
-
-    </>) : 
-  //  Not loggedIn
-    (<>
-    <div>
-      <LoginForm setLoggedIn={setLoggedIn} />
-    </div>
-    </>)
+    loggedIn ? (
+      <>
+        <div className="fixed top-0 w-full z-30"> {/* NavBar with higher z-index */}
+          <NavBar 
+            info={info} 
+            setInfo={setInfo} 
+            settings={settings} 
+            setSettings={setSettings} 
+          />
+        </div>
+        <div className={`${info ? 'flex' : 'hidden'} fixed inset-0 pt-12 w-full h-full bg-black bg-opacity-50 z-20 items-center justify-center`}>
+          {/* Overlay for Info, starts below NavBar */}
+          <Info />
+        </div>
+        <div className={`${settings ? 'flex' : 'hidden'} fixed inset-0 pt-12 w-full h-full bg-black bg-opacity-50 z-20 items-center justify-center`}>
+          {/* Overlay for Settings, starts below NavBar */}
+          <Settings setLoggedIn={setLoggedIn}/>
+        </div>
+        <div className="pt-12"> {/* Padding to ensure game is below NavBar */}
+          <LittleGame/>
+        </div>
+      </>
+    ) : (
+      <div className="flex items-center justify-center h-screen">
+        <LoginForm setLoggedIn={setLoggedIn} />
+      </div>
+    )
   );
 };
 

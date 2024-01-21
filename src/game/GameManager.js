@@ -19,9 +19,6 @@ class GameManager {
         setCanvasFixedSize( vec2(1280, 720));
         this.levelSize = vec2(38, 20);
 
-        //set the cameraPos
-        this.InitialCameraPos = this.levelSize.scale(.5);
-
         // camera
         setCameraPos(this.levelSize.scale(.5))
 
