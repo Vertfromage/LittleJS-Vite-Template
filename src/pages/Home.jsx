@@ -7,6 +7,9 @@ import Settings from '../components/Settings';
 import LoginForm from '../components/LogInForm';
 import LittleGame from '../game/LittleGame';
 
+// TODO -> Change so game always shows up on home (loads only once) 
+// and other parts show above it with higher z-index when clicked and not when not.
+
 const Home = () => {
   const [info, setInfo] = useState(false)
   const [settings, setSettings] = useState(false)
@@ -33,15 +36,14 @@ const Home = () => {
       {/* Content or component for the Settings screen */}
       <Settings setLoggedIn={setLoggedIn}/>
     </div>
-  ) : (
-    // This content is shown if neither 'info' nor 'settings' is true
-    <div>
+  ) : ( <></> )
+}
+  <div>
       {/* Content or component for the default screen */}
       {/* <CanvasGame/> */}
       <LittleGame/>
-    </div>
-  )
-}
+  </div>
+
     </>) : 
   //  Not loggedIn
     (<>

@@ -144,6 +144,13 @@ function initPostProcess()
 
 // Startup LittleJS Engine
 engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, tileSheet);
+
+        // Cleanup function - This is why it's getting bugs when opening/shutting buttons
+        return () => {
+            // Add logic here to properly shut down/reset your game
+            // This might include stopping game loops, sound, removing event listeners, etc.
+            // Example: gameShutdown(); // Replace with actual shutdown/reset function
+        };
 }, []);
     return <div ref={containerRef}></div>;
   
